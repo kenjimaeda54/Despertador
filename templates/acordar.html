@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+   <head>                 
+   <meta charset="UTF-8">
+   <script>
+      function loop(){
+            sessionStorage.getItem("horas");
+            sessionStorage.removeItem("horas");
+            sessionStorage.getItem("minutos");
+            sessionStorage.removeItem("minutos")
+            let time = setInterval(acao,2000);
+          
+         }
+     
+      function acao(){
+         window.location.href='/';
+      }  
+      </script>
+   </head>                 
+   <body>
+      <h1>Bom dia</h1> 
+      <input type=button onclick="loop()" value="RESETAR O ALARME"></input>                        
+   </body> 
+</html>

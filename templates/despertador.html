@@ -1,0 +1,33 @@
+<!Doctype html>
+<html>
+   <head>                 
+   <meta charset="UTF-8">
+   </head>                 
+   <body> 
+   <h1 id="area"></h1>
+   </body> 
+   <script>                        
+   const agora = new Date();
+   let h = agora.getHours();
+   let m = agora.getMinutes();
+   let horas = '';
+   let minutos = '';
+   if(typeof sessionStorage.horas=="undefined"){
+      sessionStorage.horas = prompt("Digite as horas por favor.Atenção:formato 24hors");
+   }
+   if(typeof sessionStorage.minutos=="undefined"){
+      sessionStorage.minutos = prompt("Digite os minutos por favor.Atenção:formato 00");
+   } 
+      horas = sessionStorage.horas;
+      minutos = sessionStorage.minutos;
+      document.getElementById("area").innerHTML="Despertador vai ser acionado as: "+horas+":"+minutos;     
+   if(h==horas && m==minutos){
+      window.location.href="/despertar";
+   }else{
+      let time = setInterval(acao,50000);
+   }
+   function acao(){
+      document.location.reload(true);
+   }
+   </script>
+</html>
